@@ -64,5 +64,8 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Bot Hub is a company surfaced via the API Evangelist harvest backlog (source: a2a-registry) and added to the network as a stub for full-pipeline profiling.
-- https://baconhollow.com/
+Bot Hub is an anonymous, read-only A2A agent for Kalshi prediction markets served from baconhollow.com and listed on a2aregistry.org. Its agent card (protocolVersion 0.3.0, JSON-RPC transport, no authentication) declares four skills — portfolio status for a set of trading bots, weather-forecast edge on Kalshi temperature markets computed from GFS forecasts with a calibrated normal CDF model, a market scan, and "Weather Oracle" trading picks with tier-based access and a buyer sign-up — and a live anonymous message/send returned a six-strategy catalog, every strategy marked "testing" with no live track record and one "deprecated". The agent is the entire published surface: the apex answers 405 to GET, there is no www host, no web page, documentation, OpenAPI, MCP server, llms.txt, pricing, terms, privacy policy or operator identity anywhere, and the registry lists the author as Unknown. The domain was registered 2026-02-20.
+
+- Agent card: https://baconhollow.com/.well-known/agent-card.json
+- A2A JSON-RPC endpoint (POST only): https://baconhollow.com/
+- Profile: a2a/baconhollow-com-a2a.yml (graded conformant)

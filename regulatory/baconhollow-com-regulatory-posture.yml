@@ -1,0 +1,35 @@
+generated: '2026-09-19'
+method: searched
+probe: true
+source: >-
+  Artifacts harvested this run (well-known/, security/, lifecycle/, conformance/) and live probes of
+  the conventional legal and transparency paths on baconhollow.com, 2026-09-19. The host serves no
+  HTML pages of any kind, so there is no privacy notice, terms page, legal notice or documentation
+  site to read.
+signals: {}
+not_recorded:
+  everything: >-
+    No signal could be recorded because nothing is published. This is a live, anonymous, read-only
+    A2A trading-signal agent for Kalshi prediction markets whose operator is not identified on its
+    own host or in the registry that lists it. No privacy policy, terms, accessibility statement,
+    subprocessor list, DPA, SBOM, transparency report, age signal or data-residency statement exists
+    at any probed path. Absence is the measurement; which regimes reach the operator is decided by
+    the regime map, not here.
+probes:
+- {url: https://baconhollow.com/, status: 405, note: 'GET refused; POST-only JSON-RPC endpoint'}
+- {url: https://baconhollow.com/privacy, status: 404}
+- {url: https://baconhollow.com/terms, status: 404}
+- {url: https://baconhollow.com/about, status: 404}
+- {url: https://baconhollow.com/accessibility, status: 404}
+- {url: https://baconhollow.com/accessibility/vpat, status: 404}
+- {url: https://baconhollow.com/legal/subprocessors, status: 404}
+- {url: https://baconhollow.com/legal/dpa, status: 404}
+- {url: https://baconhollow.com/privacy/requests, status: 404}
+- {url: https://baconhollow.com/transparency, status: 404}
+- {url: https://baconhollow.com/trust, status: 404}
+- {url: https://baconhollow.com/security, status: 404}
+- {url: https://baconhollow.com/security/sbom, status: 404}
+- {url: https://baconhollow.com/docs/data-residency, status: 404}
+- {url: https://baconhollow.com/ai/transparency, status: 404}
+- {url: https://baconhollow.com/legal/report-content, status: 404}
+- {url: https://baconhollow.com/.well-known/security.txt, status: 404}

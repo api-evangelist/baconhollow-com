@@ -1,0 +1,19 @@
+generated: '2026-09-19'
+method: probed
+source: https://baconhollow.com/.well-known/agent-card.json
+docs: null
+plan_count: 0
+currency: null
+model: unpublished
+summary: >-
+  Bot Hub publishes no plans, tiers, quotas or prices. The host serves no web pages at all
+  (/pricing, /plans, /signup and /about are 404; GET / is 405), and the only mention of commercial
+  terms is inside the agent card's oracle-picks skill, which says picks come "with tier-based access"
+  and offers to "sign up for a buyer account". Neither the tiers nor their prices are published
+  anywhere a client can read without conversing with the agent, and signing up was not attempted.
+plans: []
+probes:
+- {url: https://baconhollow.com/pricing, status: 404}
+- {url: https://baconhollow.com/plans, status: 404}
+- {url: https://baconhollow.com/signup, status: 404}
+- {url: https://baconhollow.com/, status: 405}

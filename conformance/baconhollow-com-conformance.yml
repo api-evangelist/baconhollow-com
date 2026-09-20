@@ -1,0 +1,47 @@
+generated: '2026-09-19'
+method: probed
+source: >-
+  a2a/baconhollow-com-agent-card.json (fetched from https://baconhollow.com/.well-known/agent-card.json)
+  and live JSON-RPC calls against https://baconhollow.com/ on 2026-09-19. The provider publishes no
+  prose, docs or compliance claims anywhere; every entry below is read from the card or a live response.
+standards:
+- id: a2a-0.3
+  name: Agent2Agent Protocol (Agent Card graded against A2A 1.0.0 hard checks; card declares protocolVersion 0.3.0)
+  conforms: true
+  evidence: >-
+    /.well-known/agent-card.json graded conformant (capabilities object, protocolVersion present,
+    skills array of 4); the JSONRPC transport the card names answered message/send with a role
+    "agent" message and tasks/get with the A2A error -32001 Task not found. See a2a/baconhollow-com-a2a.yml.
+  domain_standard: true
+  note: >-
+    A2A is the interoperability standard of the agent-service market Bot Hub lists itself in
+    (a2aregistry.org), and the contract declares it in the card's protocolVersion and
+    preferredTransport fields, not in prose. The server implements the 0.3.0 method names only;
+    the 1.0 name SendMessage returns -32601.
+- id: jsonrpc-2.0
+  name: JSON-RPC 2.0
+  conforms: true
+  evidence: >-
+    Every POST to https://baconhollow.com/ returned a {jsonrpc: "2.0", id, result|error} envelope;
+    an unknown method returned -32601 Method not found, a non-JSON body returned -32700 with id null,
+    and an unsupported operation returned -32603.
+- id: rfc8615-well-known
+  name: Well-Known URIs (RFC 8615) for agent discovery
+  conforms: true
+  evidence: The card is served at /.well-known/agent-card.json (and the legacy /.well-known/agent.json) with Content-Type application/json.
+- id: mcp
+  name: Model Context Protocol
+  conforms: false
+  evidence: 'tools/list against the root returns -32601 Method not found; /mcp, /sse and /.well-known/mcp.json are 404. Not an MCP server.'
+- id: oauth2
+  name: OAuth 2.0 / OpenID Connect discovery
+  conforms: false
+  evidence: /.well-known/openid-configuration, /.well-known/oauth-authorization-server and /.well-known/oauth-protected-resource all 404; the endpoint is anonymous.
+- id: rfc9116-security-txt
+  name: security.txt (RFC 9116)
+  conforms: false
+  evidence: /.well-known/security.txt and /security.txt both 404.
+- id: openapi
+  name: OpenAPI
+  conforms: false
+  evidence: 'No OpenAPI, Swagger, GraphQL or AsyncAPI document is published: /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs, /docs and /redoc all 404 on the only host.'

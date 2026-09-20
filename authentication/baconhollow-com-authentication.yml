@@ -1,0 +1,28 @@
+generated: '2026-09-19'
+method: probed
+source: https://baconhollow.com/.well-known/agent-card.json
+derived_from: a2a/baconhollow-com-agent-card.json
+docs: []
+summary:
+  types: []
+  model: >-
+    No authentication is declared or required on the published surface. The agent card carries no
+    securitySchemes and no security requirement, and the JSON-RPC endpoint at https://baconhollow.com
+    accepted an anonymous message/send on 2026-09-19 and answered with agent content. There is no
+    developer portal, sign-up page, API key issuance or OAuth metadata (/.well-known/openid-configuration,
+    /oauth-authorization-server and /oauth-protected-resource all 404). The card's own text says
+    "All access is read-only."
+schemes: []
+observed:
+- surface: A2A JSON-RPC (POST https://baconhollow.com/)
+  anonymous: true
+  evidence: 'message/send with a text part returned 200 and a role "agent" message without any credential; tasks/get returned -32001 Task not found, not an auth error'
+- surface: agent/getAuthenticatedExtendedCard
+  result: '-32603 "Authenticated card not supported"'
+  evidence: consistent with no supportsAuthenticatedExtendedCard capability in the card
+gaps:
+- >-
+  The oracle-picks skill describes "tier-based access" and "sign up for a buyer account", so an
+  authorization boundary exists inside the conversation (which picks a caller may see), but nothing
+  published describes how a buyer identifies itself on a later call. Not probed: signing up would
+  have created an account.

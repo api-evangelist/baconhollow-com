@@ -1,0 +1,61 @@
+generated: '2026-09-19'
+method: probed
+source: >-
+  Live GET probes of the closed /.well-known/* path list (plus /apis.json, /apis.yml, /security.txt,
+  the A2A card paths and a negative control) on baconhollow.com, 2026-09-19. www.baconhollow.com does
+  not resolve (NXDOMAIN) and the card, the registry record and the TLS certificate name no other host,
+  so the host set is the apex alone. Every row is a request that was issued; every status is the one
+  returned.
+summary:
+  hosts_probed: 1
+  paths_probed: 19
+  documents_served: 2
+  path_echo_control: passed
+  note: >-
+    baconhollow.com serves NONE of the closed-list discovery documents — no security.txt, no OpenID
+    or OAuth authorization-server metadata, no RFC 9728 protected-resource document, no RFC 9727
+    api-catalog, no ai-plugin.json, no UCP/ACP/AAuth document and no APIs.json. The two documents
+    it does serve at /.well-known/ are the same A2A Agent Card at the canonical and the legacy path
+    (byte-identical, 2,036 bytes). Misses are genuine: every 404 is a nine-byte text/plain
+    "Not Found" from nginx, not an SPA shell, and the negative-control path also 404s.
+hosts:
+- host: baconhollow.com
+  role: Registrable domain, A2A JSON-RPC endpoint (GET / is 405, POST only) and agent-card host; no www host exists
+  documents:
+  - {path: /.well-known/security.txt, status: 404, content_type: text/plain}
+  - {path: /.well-known/openid-configuration, status: 404, content_type: text/plain}
+  - {path: /.well-known/oauth-authorization-server, status: 404, content_type: text/plain}
+  - {path: /.well-known/oauth-protected-resource, status: 404, content_type: text/plain, note: 'The A2A endpoint answered anonymously, so no RFC 9728 metadata is expected.'}
+  - {path: /.well-known/api-catalog, status: 404, content_type: text/plain}
+  - {path: /.well-known/api-catalog.json, status: 404, content_type: text/plain}
+  - {path: /.well-known/ai-plugin.json, status: 404, content_type: text/plain}
+  - {path: /.well-known/ucp.json, status: 404, content_type: text/plain}
+  - {path: /.well-known/acp.json, status: 404, content_type: text/plain}
+  - {path: /.well-known/aauth-resource.json, status: 404, content_type: text/plain}
+  - {path: /.well-known/apis.json, status: 404, content_type: text/plain}
+  - {path: /apis.json, status: 404, content_type: text/plain}
+  - {path: /apis.yml, status: 404, content_type: text/plain}
+  - {path: /security.txt, status: 404, content_type: text/plain}
+  - {path: /.well-known/mcp.json, status: 404, content_type: text/plain}
+  - {path: /.well-known/mcp/server-card.json, status: 404, content_type: text/plain}
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: application/json
+    file: ../a2a/baconhollow-com-agent-card.json
+    standard: A2A Agent Card (RFC 8615 well-known path; card declares protocolVersion 0.3.0)
+    note: Graded conformant in a2a/baconhollow-com-a2a.yml.
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: application/json
+    file: ../a2a/baconhollow-com-agent-card.json
+    standard: A2A Agent Card (pre-0.3 legacy path)
+    note: Byte-identical to the canonical path; not saved twice.
+  - {path: /.well-known/baconhollow-com-negative-control-9c41e7a2.json, status: 404, content_type: text/plain, note: 'negative control — a 404 here confirms the two 200s above are real documents, not a catch-all'}
+root_discovery_files:
+  note: Not /.well-known/ documents; recorded because they are the only other GET paths on the host that answer 200.
+  files:
+  - {path: /health, host: baconhollow.com, status: 200, content_type: application/json, note: '{"status":"ok","version":"1.0.0","skills":4}'}
+  - {path: /robots.txt, host: baconhollow.com, status: 404}
+  - {path: /llms.txt, host: baconhollow.com, status: 404}
+  - {path: /sitemap.xml, host: baconhollow.com, status: 404}
+  - {path: /openapi.json, host: baconhollow.com, status: 404}

@@ -1,0 +1,27 @@
+generated: '2026-09-19'
+method: searched
+source: registry.npmjs.org search, pypi.org, api.github.com repository and code search, the agent card (2026-09-19)
+package_count: 0
+official_count: 0
+summary: >-
+  Bot Hub publishes no client library, CLI or SDK. The provider has no documentation host or
+  repository link anywhere in its card, and nothing on npm, PyPI or GitHub is associated with
+  baconhollow.com other than third-party registry seed data and interaction logs that list the
+  agent card URL.
+packages: []
+searched:
+- registry: npm
+  query: search "baconhollow"
+  result: 0 packages
+- registry: pypi
+  query: baconhollow
+  result: 404 Not found
+- registry: github
+  query: repositories "baconhollow"
+  result: 0 repositories
+- registry: github
+  query: code search "baconhollow.com"
+  result: 8 hits, none first-party — a2a-registry seed_data.json, ai-village-agents interaction logs and index, an expired-domain list from 2013, and our own providers store
+- registry: provider surface
+  query: SDK / install / npx / pip anywhere the provider publishes
+  result: nothing published — the host serves no HTML and the card links no repository

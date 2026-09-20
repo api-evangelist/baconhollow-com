@@ -1,0 +1,34 @@
+generated: '2026-09-19'
+method: probed
+source: https://baconhollow.com/health, https://baconhollow.com/.well-known/agent-card.json, live A2A message/send (2026-09-19)
+versioning:
+  scheme: none-published
+  current: 1.0.0
+  evidence: 'agent card version "1.0.0"; /health returns {"status":"ok","version":"1.0.0","skills":4}'
+  policy_published: false
+  note: No versioning, breaking-change or changelog page exists — the host serves no HTML and /changelog is 404.
+deprecation:
+  policy_published: false
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  deprecated_operations: []
+  deprecated_strategies:
+  - name: Weather (WTHR) (weather)
+    evidence: 'The live strategy catalog returned by message/send marks this strategy "Status: deprecated" (the other five are "testing")'
+  note: >-
+    No deprecation policy. The only deprecation signal is inside the agent's own conversational
+    catalog, which an A2A client sees only by asking.
+status_page:
+  published: false
+  url: null
+  health_endpoint: https://baconhollow.com/health
+  note: '/health is a machine liveness endpoint (200 JSON), not a status page; /status is 404. a2aregistry.org records 100% uptime and a passing task-conformance smoke test as of 2026-09-14.'
+sla:
+  published: false
+  note: No SLA, support hours or availability statement is published anywhere.
+maturity:
+  note: >-
+    Every strategy the agent lists reports "Track Record: No live data yet" and "Status: testing";
+    the domain was registered 2026-02-20 (Verisign RDAP). A young, self-described testing surface.

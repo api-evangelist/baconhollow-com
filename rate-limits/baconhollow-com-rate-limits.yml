@@ -1,0 +1,15 @@
+generated: '2026-09-19'
+method: probed
+source: live JSON-RPC responses from https://baconhollow.com/ and the agent card, 2026-09-19
+docs: null
+limit_count: 0
+summary: >-
+  No rate limits are published: there is no documentation host, the agent card carries no limits,
+  and the six JSON-RPC responses observed carried no RateLimit-*, X-RateLimit-* or Retry-After
+  header. No 429 was observed (the probe issued a handful of requests). Whether nginx or the
+  application enforces an unpublished ceiling cannot be told from outside.
+rate_limits: []
+exhaustion:
+  status: null
+  headers: []
+  note: Not documented and not observed.

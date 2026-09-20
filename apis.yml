@@ -1,23 +1,102 @@
 aid: baconhollow-com
 name: Bot Hub
-description: 'Bot Hub is a company surfaced via the API Evangelist harvest backlog (source: a2a-registry)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Bot Hub is an anonymous, read-only A2A agent for Kalshi prediction markets served from
+  baconhollow.com and listed on a2aregistry.org. Its agent card (protocolVersion 0.3.0, JSON-RPC
+  transport, no authentication) declares four skills — portfolio status for a set of trading bots,
+  weather-forecast edge on Kalshi temperature markets computed from GFS forecasts with a calibrated
+  normal CDF model, a market scan, and "Weather Oracle" trading picks with tier-based access and a
+  buyer sign-up — and a live anonymous message/send returned a six-strategy catalog, every strategy
+  marked "testing" with no live track record and one "deprecated". The agent is the entire published
+  surface: the apex answers 405 to GET, there is no www host, no web page, documentation, OpenAPI,
+  MCP server, llms.txt, pricing, terms, privacy policy or operator identity anywhere, and the
+  registry lists the author as Unknown. The domain was registered 2026-02-20.
 url: https://raw.githubusercontent.com/api-evangelist/baconhollow-com/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:a2a-registry
-x-tier: stub
+x-tier: profiled
 x-tier-reason: harvest
+x-tier-note: 'Full local enrichment pass 2026-09-19 (was: stub / harvest); x-tier-reason kept stable as the lead marker.'
 specificationVersion: '0.20'
 created: '2026-09-19'
 modified: '2026-09-19'
 tags:
-- Company
-apis: []
+- AI Agents
+- A2A
+- Autonomous Agents
+- Prediction Markets
+- Kalshi
+- Trading Signals
+- Weather
+- agent-native
+apis:
+- aid: baconhollow-com:bot-hub-a2a
+  name: Bot Hub (A2A)
+  description: >-
+    Anonymous A2A 0.3.0 agent at https://baconhollow.com (JSON-RPC, POST only). Four skills:
+    portfolio-status, weather-forecast-edge, market-scan and oracle-picks. message/send and tasks/get
+    are implemented and answered live on 2026-09-19; the authenticated extended card is not supported;
+    the A2A 1.0 method names and MCP methods return Method not found. No securitySchemes are declared
+    and no credential was needed. The card is served at /.well-known/agent-card.json and byte-identical
+    at the legacy /.well-known/agent.json.
+  humanURL: https://baconhollow.com/.well-known/agent-card.json
+  baseURL: https://baconhollow.com
+  tags:
+  - A2A
+  - AI Agents
+  - Prediction Markets
+  - Kalshi
+  - Weather
+  properties:
+  - type: AgentCard
+    url: a2a/baconhollow-com-a2a.yml
+  - type: AgentCard
+    name: Provider-hosted (canonical path)
+    url: https://baconhollow.com/.well-known/agent-card.json
+  - type: AgentCard
+    name: Provider-hosted (legacy path, byte-identical)
+    url: https://baconhollow.com/.well-known/agent.json
+  - type: Authentication
+    url: authentication/baconhollow-com-authentication.yml
+  - type: Conformance
+    url: conformance/baconhollow-com-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/baconhollow-com-lifecycle.yml
+  - type: RateLimits
+    url: rate-limits/baconhollow-com-rate-limits.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/baconhollow-com-domain-security.yml
 - type: Website
+  name: Registrable domain; serves no HTML — GET / answers 405 (POST-only A2A JSON-RPC endpoint)
   url: https://baconhollow.com/
+- type: AgentCard
+  url: a2a/baconhollow-com-a2a.yml
+- type: WellKnown
+  url: well-known/baconhollow-com-well-known.yml
+- type: Authentication
+  url: authentication/baconhollow-com-authentication.yml
+- type: Conformance
+  url: conformance/baconhollow-com-conformance.yml
+- type: Lifecycle
+  url: lifecycle/baconhollow-com-lifecycle.yml
+- type: LLMsTxt
+  url: llms/baconhollow-com-llms.txt
+- type: Plans
+  url: plans/baconhollow-com-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/baconhollow-com-rate-limits.yml
+- type: Packages
+  url: packages/baconhollow-com-packages.yml
+- type: RegulatoryPosture
+  url: regulatory/baconhollow-com-regulatory-posture.yml
+x-enrichment:
+  date: '2026-09-19'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v3
