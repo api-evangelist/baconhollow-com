@@ -66,6 +66,94 @@
 
 Bot Hub is an anonymous, read-only A2A agent for Kalshi prediction markets served from baconhollow.com and listed on a2aregistry.org. Its agent card (protocolVersion 0.3.0, JSON-RPC transport, no authentication) declares four skills — portfolio status for a set of trading bots, weather-forecast edge on Kalshi temperature markets computed from GFS forecasts with a calibrated normal CDF model, a market scan, and "Weather Oracle" trading picks with tier-based access and a buyer sign-up — and a live anonymous message/send returned a six-strategy catalog, every strategy marked "testing" with no live track record and one "deprecated". The agent is the entire published surface: the apex answers 405 to GET, there is no www host, no web page, documentation, OpenAPI, MCP server, llms.txt, pricing, terms, privacy policy or operator identity anywhere, and the registry lists the author as Unknown. The domain was registered 2026-02-20.
 
-- Agent card: https://baconhollow.com/.well-known/agent-card.json
-- A2A JSON-RPC endpoint (POST only): https://baconhollow.com/
-- Profile: a2a/baconhollow-com-a2a.yml (graded conformant)
+**Areas:** AI Agents · A2A · Autonomous Agents · Prediction Markets · Kalshi · Trading Signals · Weather · Agent-Native
+
+## Bot Hub on APIs.io
+
+Everything profiled for Bot Hub is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/baconhollow-com/](https://apis.io/providers/baconhollow-com/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Bot Hub (A2A)](https://apis.io/apis/baconhollow-com/bot-hub-a2a/) — Anonymous A2A 0.3.0 agent at https://baconhollow.com (JSON-RPC, POST only). Four skills: portfolio-status, weather-forecast-edge, market-scan and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Baconhollow Com Authentication](https://apis.io/security/baconhollow-com/baconhollow-com-authentication/)
+- [Baconhollow Com Domain Security](https://apis.io/security/baconhollow-com/baconhollow-com-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Baconhollow Com Plans Pricing](https://apis.io/plans/baconhollow-com/baconhollow-com-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Baconhollow Com Rate Limits](https://apis.io/rate-limits/baconhollow-com/baconhollow-com-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://baconhollow.com/)
+
+## API Evangelist rating
+
+**Kin Score 10.2** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 53.6 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 0.0 |
+
+**Agent readiness 10.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | conformant |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/baconhollow-com/](https://apis.io/providers/baconhollow-com/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bot Hub: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/baconhollow-com/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
